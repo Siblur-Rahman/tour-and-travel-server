@@ -22,12 +22,20 @@ const deleteTour = async (id: string) => {
   return result;
 };
 
+// const getNextSchedule = async (id: string) => {
+//   const tour = await Tour.findById(id);
+//   const nextSchedule = tour?.getNextNearestStartDateAndEndData();
+//   return {
+//     tour,
+//     nextSchedule,
+//   };
+// };
 const getNextSchedule = async (id: string) => {
-  const tour = await Tour.findById(id);
-  const nextSchedule = tour?.getNextNearestStartDateAndEndData();
+  const tour = await Tour.getNextNearestStartDateAndEndData();
+  // const nextSchedule = tour?.getNextNearestStartDateAndEndData();
   return {
     tour,
-    nextSchedule,
+    // nextSchedule,
   };
 };
 
